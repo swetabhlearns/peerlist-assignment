@@ -5,7 +5,7 @@ const SidebarComponent = () => {
     <div className="w-[212px] border-r border-primaryBorder flex-col flex-shrink-0  h-screen pb-2 lg:flex justify-between hidden">
       <div className="relative my-3">
         <a href="/scroll">
-          <img
+          <Image
             alt="Peerlist"
             loading="lazy"
             width="124"
@@ -20,8 +20,6 @@ const SidebarComponent = () => {
       </div>
       <div className="pr-6 flex flex-col  h-full overflow-y-auto hide-scrollbar gap-6">
         <div className="mt-6">
-          {/* Links */}
-          {/* Replace href values with appropriate paths */}
           <a
             className="flex lg:flex-row flex-col items-center group lg:py-2.5"
             href="/scroll"
@@ -39,7 +37,6 @@ const SidebarComponent = () => {
                 Scroll
               </span>
             </span>
-            {/* SVG and text */}
           </a>
           <a
             className="flex lg:flex-row flex-col items-center group lg:py-2.5"
@@ -58,7 +55,6 @@ const SidebarComponent = () => {
                 Projects
               </span>
             </span>
-            {/* SVG and text */}
           </a>
           <a
             className="flex lg:flex-row flex-col items-center group lg:py-2.5"
@@ -72,7 +68,6 @@ const SidebarComponent = () => {
                 Inbox
               </span>
             </span>
-            {/* SVG and text */}
           </a>
           <a
             className="flex lg:flex-row flex-col items-center group lg:py-2.5"
@@ -86,7 +81,6 @@ const SidebarComponent = () => {
                 Jobs
               </span>
             </span>
-            {/* SVG and text */}
           </a>
           <a
             className="flex lg:flex-row flex-col items-center group lg:py-2.5"
@@ -105,7 +99,6 @@ const SidebarComponent = () => {
                 Search
               </span>
             </span>
-            {/* SVG and text */}
           </a>
           <a
             className="flex lg:flex-row flex-col items-center group lg:py-2.5"
@@ -124,14 +117,9 @@ const SidebarComponent = () => {
                 Network
               </span>
             </span>
-            {/* SVG and text */}
           </a>
-
-          {/* Additional Links */}
         </div>
         <div className="">
-          {/* User Profile and Company */}
-          {/* Adjust img src and href values */}
           <a
             className="flex lg:flex-row flex-col items-center group lg:py-2.5"
             href="/swetabh"
@@ -140,7 +128,7 @@ const SidebarComponent = () => {
               <div className="w-6 h-6 relative">
                 <div className="w-6 h-6 rounded-full bg-white">
                   <Image
-                    src="https://bafkreihnhma5kplypz263o2khmull2dkix6sluxc3dqbgrnyecwhv5cqei.ipfs.nftstorage.link/"
+                    src="/6.png"
                     alt="Scroll"
                     width={"24"}
                     height={"24"}
@@ -154,13 +142,11 @@ const SidebarComponent = () => {
                 Swetabh Kumar
               </span>
             </span>
-            {/* User Profile */}
           </a>
           <a
             className="flex lg:flex-row flex-col items-center group py-2"
             href="/company/create"
           >
-            {/* Company */}
             <span className="relative text-white group-hover:text-gray-300">
               <div className="w-6 h-6 relative">
                 <div className="w-6 h-6 rounded-full bg-white">
@@ -182,14 +168,12 @@ const SidebarComponent = () => {
             </span>
           </a>
         </div>
-        {/* Join Waitlist Button */}
+
         <button
           type="button"
           aria-label="Join Peerlist Mobile App Waitlist"
           className="flex mt-2 items-center gap-2 cursor-pointer group"
-        >
-          {/* Button contents */}
-        </button>
+        ></button>
       </div>
       <div className="flex flex-col justify-start text-[10px] gap-6 ">
         <p className="text-gray-700 font-semibold">
