@@ -41,7 +41,7 @@ const Badges = () => {
         </svg>
       </button>
       <button
-        className="border font-medium text-center transition-all ease-in duration-75 disabled:opacity-50 disabled:cursor-not-allowed flex items-center leading-120 select-none rounded-full justify-center text-sm h-8 w-8 text-primary bg-white border-gray-gray3 hover:bg-gray-gray1 sm:ml-4 ml-2 "
+        className="border font-medium text-center transition-all ease-in duration-75 disabled:opacity-50 disabled:cursor-not-allowed flex items-center leading-120 select-none rounded-full justify-center text-sm h-8 w-8 text-primary bg-white border-gray-gray3 hover:bg-gray-gray1  "
         type="button"
         title="Save this job"
       >
@@ -105,7 +105,7 @@ const Badges = () => {
         </svg>
       </button>
       <button
-        className="border font-medium text-center transition-all ease-in duration-75 disabled:opacity-50 disabled:cursor-not-allowed flex items-center leading-120 select-none rounded-full justify-center text-sm h-8 w-8 text-primary bg-white border-gray-gray3 hover:bg-gray-gray1 sm:ml-4 ml-2 "
+        className="border font-medium text-center transition-all ease-in duration-75 disabled:opacity-50 disabled:cursor-not-allowed flex items-center leading-120 select-none rounded-full justify-center text-sm h-8 w-8 text-primary bg-white border-gray-gray3 hover:bg-gray-gray1  "
         type="button"
         title="Save this job"
       >
@@ -132,7 +132,7 @@ const Badges = () => {
         </svg>
       </button>
       <button
-        className="border font-medium text-center transition-all ease-in duration-75 disabled:opacity-50 disabled:cursor-not-allowed flex items-center leading-120 select-none rounded-full justify-center text-sm h-8 w-8 text-primary bg-white border-gray-gray3 hover:bg-gray-gray1 sm:ml-4 ml-2 "
+        className="border font-medium text-center transition-all ease-in duration-75 disabled:opacity-50 disabled:cursor-not-allowed flex items-center leading-120 select-none rounded-full justify-center text-sm h-8 w-8 text-primary bg-white border-gray-gray3 hover:bg-gray-gray1 "
         type="button"
         title="Save this job"
       >

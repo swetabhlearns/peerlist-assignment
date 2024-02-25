@@ -3,7 +3,7 @@ import React from "react";
 
 const JobHeader = () => {
   return (
-    <div className="mb-4 flex items-center gap-3">
+    <div className="mb-4 flex-col items-center gap-3">
       <a
         className="flex"
         rel="noreferrer"
@@ -25,7 +25,7 @@ const JobHeader = () => {
         </div>
       </a>
       <div className="flex flex-col ">
-        <span className="flex items-center font-semibold text-lg">
+        <span className="flex items-center font-semibold text-base lg:text-lg">
           Software Engineer, Front End{" "}
           <svg
             width="16"
@@ -43,7 +43,7 @@ const JobHeader = () => {
             />
           </svg>
         </span>
-        <span>
+        <span className="lg:text-[14px] text-xs">
           {`at Peerlist • Full time • Remote (United States, Canada)`}
         </span>
       </div>

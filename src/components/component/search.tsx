@@ -1,8 +1,8 @@
 import React from "react";
 
-const CandidateSearch = () => {
+const CandidateSearch = ({ onSearchQueryChange }: any) => {
   return (
-    <div className="flex items-center gap-2 lg:px-6">
+    <div className="flex items-center gap-2 px-4 lg:px-6">
       <span>
         <svg
           width="16"
@@ -24,6 +24,7 @@ const CandidateSearch = () => {
         type="text"
         placeholder="Search candidates"
         className="placeholder-gray-400 text-gray-900 appearance-none px-1 focus:outline-none"
+        onChange={(e) => onSearchQueryChange(e.target.value)}
       />
     </div>
   );

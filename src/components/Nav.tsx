@@ -18,7 +18,7 @@ const SidebarComponent = () => {
           />
         </a>
       </div>
-      <div className="pr-6 flex flex-col justify-between h-full overflow-y-auto hide-scrollbar">
+      <div className="pr-6 flex flex-col  h-full overflow-y-auto hide-scrollbar gap-6">
         <div className="mt-6">
           {/* Links */}
           {/* Replace href values with appropriate paths */}
@@ -129,7 +129,7 @@ const SidebarComponent = () => {
 
           {/* Additional Links */}
         </div>
-        <div className="my-6">
+        <div className="">
           {/* User Profile and Company */}
           {/* Adjust img src and href values */}
           <a
@@ -191,9 +191,11 @@ const SidebarComponent = () => {
           {/* Button contents */}
         </button>
       </div>
-      <div className="flex flex-col justify-start">
-        {/* Footer */}
-        {/* Links and copyright */}
+      <div className="flex flex-col justify-start text-[10px] gap-6 ">
+        <p className="text-gray-700 font-semibold">
+          Blog • Help Center • Feedback • Code of Conduct • Privacy • T&C
+        </p>
+        <span className="text-gray-700 ">© 2023 Peerlist Inc.</span>
       </div>
     </div>
   );

@@ -11,11 +11,11 @@ const Header = () => {
         <JobHeader />
         <Badges />
       </div>
-      <div className="flex justify-between">
-        <div className="flex gap-4 pl-[72px]">
+      <div className="flex flex-col lg:flex-row gap-1 justify-between">
+        <div className="flex gap-4 lg:pl-[72px] ">
           <BottomInfo bold="78" notBold="Candidates" />
-          <BottomInfo bold="78" notBold="Candidates" />
-          <BottomInfo bold="78" notBold="Candidates" />
+          <BottomInfo bold="68" notBold="Applied w/ Peerlist" />
+          <BottomInfo bold="2872" notBold="Views" />
         </div>
         <div className="flex gap-2">
           <BottomRightInfo notBold="Posted" bold="1d ago" />

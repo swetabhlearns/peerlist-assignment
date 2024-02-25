@@ -9,12 +9,16 @@ interface Props {
 }
 
 const Card = ({ index, data }: Props) => {
-  console.log(data);
   return (
     <div className="border border-gray-200 rounded-lg p-4 bg-gray-00 flex flex-col gap-2">
       {!data?.external && (
         <>
-          <CardHeader image={data.image} reff={data.reffered} index={index} />
+          <CardHeader
+            image={data.image}
+            reff={data.reffered}
+            index={index}
+            peerMatched={data.peerMatched}
+          />
           <CandidateInfo name={data.name} designation={data.company} />
           {index !== 0 && (
             <div className="flex gap-4 ">
@@ -36,12 +40,12 @@ const Card = ({ index, data }: Props) => {
         <>
           <div className="flex justify-between">
             <span className="font-semibold text-[14px] text-gray-1000">
-              Darrell Steward
+              {data.name}
             </span>
             <span className="text-[10px] text-gray-500">Applied 1d ago</span>
           </div>
           <div className="flex gap-4">
-            <CandidateMetadata notBold="Resume" bold="DarrellSteward.pdf ↗" />
+            <CandidateMetadata notBold="Resume" bold={`${data.name} .pdf ↗`} />
             <CandidateMetadata notBold="Notice period" bold="30 days" />
           </div>
         </>

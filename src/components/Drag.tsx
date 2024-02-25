@@ -1,5 +1,3 @@
-"use client";
-
 import { CardType, cardsData } from "@/bin/CardData";
 import { useEffect, useState } from "react";
 import {
@@ -11,11 +9,41 @@ import {
 import BoardHeader from "./component/BoardHeader";
 import Card from "./component/card";
 
-const Drag = () => {
+const Drag = ({ searchQuery }: any) => {
   const [data, setData] = useState<CardType[] | []>([]);
+
+  const [filteredData, setFilteredData] = useState<CardType[] | []>([]);
+
   useEffect(() => {
     setData(cardsData);
+    setFilteredData(cardsData);
   }, []);
+
+  useEffect(() => {
+    if (searchQuery === "") {
+      setFilteredData(cardsData);
+      return;
+    }
+    if (searchQuery !== "") {
+      const filteredData = data.map((item) => ({
+        ...item,
+        components: item.components.filter((component) => {
+          return (
+            component.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            component.company
+              .toLowerCase()
+              .includes(searchQuery.toLowerCase()) ||
+            component.contact
+              ?.toLowerCase()
+              .includes(searchQuery.toLowerCase()) ||
+            component.number?.toString().includes(searchQuery)
+          );
+        }),
+      }));
+
+      setFilteredData(filteredData);
+    }
+  }, [searchQuery]);
 
   const onDrag = (e: DropResult) => {
     const { source, destination } = e;
@@ -43,20 +71,19 @@ const Drag = () => {
 
   return (
     <DragDropContext onDragEnd={onDrag}>
-      <div className="pt-0  pr-6 pb-20 pl-6 flex gap-2 ">
-        {data.length &&
-          data.map((item, index) => (
+      <div className="pt-0 pr-6 pb-20 pl-6 flex flex-col lg:flex-row gap-2">
+        {filteredData.length > 0 &&
+          filteredData.map((item, index) => (
             <Droppable key={item.id} droppableId={`droppable${item.id}`}>
               {(provided) => (
                 <div
-                  className={`bg-gray-50 rounded-lg w-1/3  flex flex-col gap-2 border border-${
+                  className={`bg-gray-50 rounded-lg lg:w-1/3 w-full flex flex-col gap-2 border border-${
                     index === 0
-                      ? "bg-red-100"
+                      ? "red-100"
                       : index === 2
-                      ? "bg-green-100"
-                      : "bg-gray-200"
-                  } `}
-                  key={index}
+                      ? "green-100"
+                      : "gray-200"
+                  }`}
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                 >
@@ -65,10 +92,10 @@ const Drag = () => {
                     title={item?.title}
                     length={item?.components?.length}
                   />
-                  {item.components.map((name, idx) => (
+                  {item.components.map((component, idx) => (
                     <Draggable
-                      key={name.id}
-                      draggableId={`draggable${name.id}`}
+                      key={component.id}
+                      draggableId={`draggable${component.id}`}
                       index={idx}
                     >
                       {(provided) => (
@@ -78,7 +105,7 @@ const Drag = () => {
                           {...provided.draggableProps}
                           ref={provided.innerRef}
                         >
-                          <Card index={index} data={name} />
+                          <Card index={index} data={component} />
                         </div>
                       )}
                     </Draggable>
